@@ -1,0 +1,30 @@
+<div id="new-classroom" v-cloak>
+  <div class="container">
+    <h1>Create a classroom</h1>
+    <hr/>
+    <ajax-form action="createClassroom" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="className">Class Name</label>
+            <input class="form-control" id="className" name="className" type="text"  :class="[formErrors.className ? 'is-invalid' : '']" v-model.trim="formData.className" placeholder="My class name" focus-first>
+            <div class="invalid-feedback" v-if="formErrors.className">Please enter a classroom name or choose "Cancel".</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="text-danger" v-if="cloudError">An error occured while processing your request. Please check your information and try again, or <a href="/contact">contact support</a> if the error persists.</p>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group text-right">
+            <a class="btn btn-outline-info" href="/welcome">Cancel</a>
+            <ajax-button type="submit" :syncing="syncing" class="btn btn-dark">Create</ajax-button>
+          </div>
+        </div>
+      </div>
+    </ajax-form>
+  </div>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+

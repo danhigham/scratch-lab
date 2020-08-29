@@ -161,7 +161,7 @@ without necessarily having a billing card.`
       type: 'string',
       description: 'The id assigned to the user via the 3rd party; i.e Google',
       example: 12345678
-    }
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -173,7 +173,9 @@ without necessarily having a billing card.`
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     // n/a
 
-  },
-
-
+    classRooms: {
+      collection: 'classroom',
+      via: 'teacher'
+    }
+  }
 };

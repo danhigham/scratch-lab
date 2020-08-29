@@ -33,7 +33,12 @@ module.exports.routes = {
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
 
+  // classrooms
 
+  'GET /classrooms':         { action: 'classroom/view-my-classrooms'},
+  'GET /create-classroom':   { action: 'classroom/view-create' },
+  'GET /join-classroom':     { action: 'classroom/view-join' },
+  
   //  ╔╦╗╦╔═╗╔═╗  ╦═╗╔═╗╔╦╗╦╦═╗╔═╗╔═╗╔╦╗╔═╗   ┬   ╔╦╗╔═╗╦ ╦╔╗╔╦  ╔═╗╔═╗╔╦╗╔═╗
   //  ║║║║╚═╗║    ╠╦╝║╣  ║║║╠╦╝║╣ ║   ║ ╚═╗  ┌┼─   ║║║ ║║║║║║║║  ║ ║╠═╣ ║║╚═╗
   //  ╩ ╩╩╚═╝╚═╝  ╩╚═╚═╝═╩╝╩╩╚═╚═╝╚═╝ ╩ ╚═╝  └┘   ═╩╝╚═╝╚╩╝╝╚╝╩═╝╚═╝╩ ╩═╩╝╚═╝
@@ -57,6 +62,8 @@ module.exports.routes = {
   'PUT   /api/v1/account/update-profile':             { action: 'account/update-profile' },
   'PUT   /api/v1/account/update-billing-card':        { action: 'account/update-billing-card' },
   'PUT   /api/v1/entrance/login':                        { action: 'entrance/login' },
+  'PUT   /api/v1/classroom/create-classroom':             { action: 'classroom/create-classroom' },
+
   'POST  /api/v1/entrance/signup':                       { action: 'entrance/signup' },
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },
   'POST  /api/v1/entrance/update-password-and-login':    { action: 'entrance/update-password-and-login' },
@@ -64,6 +71,8 @@ module.exports.routes = {
 
   'GET /api/v1/auth/google':                {controller: 'PassportController', action: 'googleAuth'},
   'GET /api/v1/auth/google/callback':       {controller: 'PassportController', action: 'googleCallback'},
+
+  'GET /api/v1/classroom/:id': { action: 'classroom/get-students'},
 
   'GET /login-with-google': { action: 'entrance/login-with-google' }
 

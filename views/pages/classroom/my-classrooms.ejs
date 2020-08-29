@@ -1,0 +1,19 @@
+<div id="my-classrooms" v-cloak>
+  <div class="container">
+
+    <h1>TODO: Implement this page.</h1>
+    <p>(See also <em>assets/styles/pages/classroom/my-classrooms.less</em>, <em>assets/js/pages/classroom/my-classrooms.page.js</em>, and <em>api/controllers/classroom/view-my-classrooms.js</em>.)</p>
+
+    <select>
+      <% classRooms.forEach(function(classroom){ %>
+        <option><%= classroom.name %></option>
+      <% }); %>
+    </select>
+    <ul>
+      
+    </ul>
+  </div>
+
+</div>
+
+<%- /* Expose server-rendered data as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
